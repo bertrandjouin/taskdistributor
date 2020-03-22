@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
 
   def new
+    @user = current_user
     @task = Task.new()
-    @tasks = Task.all
+    @tasks = @user.tasks
   end
 
   def create
@@ -16,7 +17,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
+    @tasks = @user.tasks
   end
 
   def destroy
@@ -28,7 +29,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :user_id, :repeatable, :id)
+    params.require(:task).permit(:name, :user_id, :repeatable)
   end
 
 end

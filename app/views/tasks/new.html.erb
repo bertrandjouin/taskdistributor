@@ -1,14 +1,15 @@
 <div class="container">
   <h1>New task</h1>
   <%= simple_form_for(@task) do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, required: true %>
     <%= f.input :repeatable, as: :radio_buttons %>
-    <%= f.submit %>
+    <%= f.submit%>
   <% end %>
 </div>
 
-<div>
+<div class="container">
 
-<%= render 'index' %>
+  <%= render 'index' %>
+  <%= link_to "start adding players", new_player_path %>
 
 </div>

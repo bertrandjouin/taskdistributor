@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>New player</h1>
+  <%= simple_form_for(@player) do |f| %>
+    <%= f.input :pseudo %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div class="container">
+  <%= render 'index' %>
+  <%= render '/tasks/index' %>
+  <p>mix & match</p>
+</div>
