@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Tasks list</h1>
+    <ul>
+    <% @tasks.each do |task| %>
+    <li><%= task.name %> - <%= task.repeatable %> - <%= link_to "delete", task_path(task), method: :delete %></li>
+
+    <% end %>
+    </ul>
+</div>

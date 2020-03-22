@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>New task</h1>
+  <%= simple_form_for(@task) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :repeatable, as: :radio_buttons %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div>
+
+<%= render 'index' %>
+
+</div>
