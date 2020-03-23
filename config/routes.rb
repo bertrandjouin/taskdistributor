@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :tasks, only: [:new, :create, :index, :destroy]
     resources :players, only: [:new, :create, :index, :destroy]
     resources :skills, only: [:new, :create, :index, :destroy]
-
+    resources :attributions, only: [:new, :create, :index, :destroy]
 end

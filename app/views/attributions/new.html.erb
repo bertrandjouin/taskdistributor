@@ -1,0 +1,7 @@
+<h1>task attribution</h1>
+
+  <%@tasks.each do |task|  %>
+  <ul>
+    <li><%= task.name %> attribuée à <%= @players.sample.pseudo %></li>
+  </ul>
+  <% end %>
