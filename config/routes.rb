@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
     resources :tasks, only: [:new, :create, :index, :destroy]
     resources :players, only: [:new, :create, :index, :destroy]
+    resources :skills, only: [:new, :create, :index, :destroy]
+
 end
