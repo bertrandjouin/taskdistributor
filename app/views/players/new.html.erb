@@ -1,13 +1,17 @@
 <div class="container">
   <h1>New player</h1>
   <%= simple_form_for(@player) do |f| %>
-    <%= f.input :pseudo %>
-    <%= f.submit %>
+    <div class="inline-form">
+      <%= f.input :pseudo %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
 
 <div class="container">
   <%= render 'index' %>
   <%= render '/tasks/index' %>
-  <%= link_to "mix & match", new_attribution_path %>
+  <%= link_to "mix & match", new_attribution_path, class: "btn btn-primary"  %>
 </div>
