@@ -5,4 +5,6 @@
       <li><%= task.name %> attribuée à <%= @players.sample.pseudo %></li>
     </ul>
   <% end %>
+<%= link_to "recommencer", new_player_path %>
+
 </div>
