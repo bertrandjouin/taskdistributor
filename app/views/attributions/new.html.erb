@@ -1,6 +1,6 @@
 <div class="container">
   <h1>task attribution</h1>
-  <%@tasks.each do |task|  %>
+  <%@tasks.shuffle.each do |task|  %>
     <ul>
       <li><%= task.name %> attribuée à <%= @players.sample.pseudo %></li>
     </ul>
