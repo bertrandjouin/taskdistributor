@@ -2,7 +2,7 @@
   <h1>New task</h1>
   <%= simple_form_for(@task) do |f| %>
     <%= f.input :name, required: true %>
-    <%= f.input :repeatable, as: :radio_buttons %>
+    <%#= f.input :repeatable, as: :radio_buttons %>
     <%= f.submit%>
   <% end %>
 </div>

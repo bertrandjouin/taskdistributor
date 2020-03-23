@@ -5,7 +5,7 @@
     <h1>Tasks list</h1>
       <ul>
         <% @tasks.each do |task| %>
-        <li><%= task.name.capitalize %> - Repeatable : <%= task.repeatable %> - <%= link_to "delete", task_path(task), method: :delete %></li>
+        <li><%= task.name.capitalize %> <%#= task.repeatable %> <%= link_to "delete", task_path(task), method: :delete %></li>
         <% end %>
       </ul>
     <% end %>
