@@ -8,16 +8,11 @@ end
 
 def create
 playersselect(@players)
-
 end
 
 
 def playersselect(players)
   @player = players.sample
-end
-
-def toto
-  puts "toto"
 end
 
 end
