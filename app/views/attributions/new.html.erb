@@ -2,7 +2,7 @@
   <h1>task attribution</h1>
   <%@tasks.shuffle.each do |task|  %>
     <ul>
-      <li><%= task.name %> attribuée à <%= @players.sample.pseudo %></li>
+      <li><%= task.name %> : <strong><%= @players.sample.pseudo.capitalize %></strong></li>
     </ul>
   <% end %>
   <div>
