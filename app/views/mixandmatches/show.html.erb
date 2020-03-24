@@ -1,0 +1,25 @@
+<div class="container">
+
+<h1>YESSSSSSS</h1>
+
+<%= current_user.id %>
+<ul>
+<% @tasks.each do |task| %>
+<li><%= task.name %></li>
+<% end %>
+</ul>
+<ul>
+<% @players.each do |player| %>
+<li><%= player.pseudo %></li>
+<% end %>
+</ul>
+
+<%= @task.name %>
+
+<p>mixandmatchID</p>
+<%= @mixandmatch.id %>
+<%= @attribution.id %>
+</div>
+
+
+

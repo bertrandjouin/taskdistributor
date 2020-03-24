@@ -11,7 +11,15 @@
 </div>
 
 <div class="container">
-  <%= render 'index' %>
+  <%= render partial: 'index' %>
   <%= render '/tasks/index' %>
-  <%= link_to "mix & match", new_attribution_path, class: "btn btn-primary"  %>
+</div>
+
+<div class="container">
+  <%= simple_form_for @mixandmatch do |f| %>
+  <%= f.submit "mixandmatch", class: "btn-home", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
 </div>

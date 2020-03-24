@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
     @player = Player.new()
     @players = @user.players
     @tasks = @user.tasks
+    @mixandmatch = Mixandmatch.new()
   end
 
   def create
