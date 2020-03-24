@@ -14,11 +14,18 @@
 <% end %>
 </ul>
 
-<%= @task.name %>
+<p>Attributions :</p>
 
-<p>mixandmatchID</p>
-<%= @mixandmatch.id %>
-<%= @attribution.id %>
+  <ul>
+    <% @mixandmatch.attributions.each do |attribution| %>
+    <li><%= attribution.player.pseudo %> - <%= attribution.task.name  %> </li>
+    <% end %>
+  </ul>
+
+<% @players.each do |player| %>
+<%= player.pseudo %>
+<% end %>
+
 </div>
 
 
