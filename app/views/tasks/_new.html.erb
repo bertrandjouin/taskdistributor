@@ -3,16 +3,13 @@
   <%= simple_form_for(@task) do |f| %>
     <div class="form-inputs">
       <%= f.input :name, required: true %>
-      <%#= f.input :repeatable, as: :radio_buttons %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-<div>
-</div>
 <div class="container">
-  <%= link_to "start adding players", new_player_path, class: "btn btn-primary" %>
+  <%= link_to "start adding players", players_path, class: "btn btn-primary" %>
 </div>
 

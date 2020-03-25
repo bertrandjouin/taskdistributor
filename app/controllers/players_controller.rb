@@ -11,19 +11,28 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     @player.user = current_user
+    @user = current_user
+    @players = @user.players
+    @mixandmatch = Mixandmatch.new()
     if @player.save
-      redirect_to new_player_path
+      redirect_to players_path
     else
-      render :new
+      render :index
     end
   end
 
   def destroy
     @player = Player.find(params[:id])
     @player.destroy
-    redirect_to new_player_path
+    redirect_to players_path
   end
 
+  def index
+    @user = current_user
+    @players = @user.players
+    @player = Player.new()
+    @mixandmatch = Mixandmatch.new()
+  end
 
   private
 
