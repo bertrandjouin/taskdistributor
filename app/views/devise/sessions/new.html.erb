@@ -1,7 +1,9 @@
+<%= render '/shared/navbar' %>
+
 <div class="container">
   <div class="formflex d-flex ">
     <div class="left-form">
-      <h2>Log in</h2>
+      <h2>Me connecter</h2>
       <br>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -16,7 +18,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.submit "Log in", class: "btn-primary" %>
+            <%= f.submit "Connexion", class: "btn-primary" %>
           </div>
         <% end %>
         <br>
