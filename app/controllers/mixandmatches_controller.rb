@@ -17,30 +17,33 @@ def create
 end
 
 def show
-
-  @attribution = Attribution.new()
   @mixandmatch = Mixandmatch.find(params[:id])
   @mixandmatch.attributions.destroy
   @user = current_user
   @tasks = @user.tasks
   @players = @user.players
-  @tasks.shuffle.each do |task|
+  @tasks.each do |task|
     randomtaskattribution(task)
-    @attribution.save
   end
-
 end
+
+def randomplayerid(players)
+  return players.order("RANDOM()").first.id
+  players = players.delete(player)
+end
+
+
 
 def randomtaskattribution(task)
-
   @attribution = Attribution.new()
   @attribution.task_id = task.id
+  @players = @user.players
+  @attribution.player_id = randomplayerid(@players)
   @attribution.mixandmatch_id = @mixandmatch.id
-    @players.each do |player|
-    @attribution.player_id = player.id
-  end
-
+  @attribution.save
 end
+
+
 
 
 end
