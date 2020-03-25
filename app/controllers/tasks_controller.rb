@@ -7,24 +7,27 @@ class TasksController < ApplicationController
   end
 
   def create
-    # @task.name ?
     @task = Task.new(task_params)
     @task.user = current_user
+    @user = current_user
+    @tasks = @user.tasks
     if @task.save
-      redirect_to new_task_path
+      redirect_to tasks_path
     else
-      render :new
+      render 'index'
     end
   end
 
   def index
+    @user = current_user
     @tasks = @user.tasks
+    @task = Task.new
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to new_task_path
+    redirect_to tasks_path
   end
 
   private

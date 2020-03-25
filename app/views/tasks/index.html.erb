@@ -1,12 +1,15 @@
 <div class="container">
-  <% if @tasks.count == 0 %>
-    <h1>Task list is empty</h1>
-  <% else %>
+  <%# if @tasks.count == 0 %>
+    <!-- <h1>Task list is empty</h1> -->
+  <%# else %>
     <h1>Tasks list</h1>
       <ul>
         <% @tasks.each do |task| %>
         <li><%= task.name.capitalize %> <%#= task.repeatable %> <%= link_to "delete", task_path(task), method: :delete %></li>
         <% end %>
       </ul>
-    <% end %>
+    <%# end %>
+
+  <%= render 'new' %>
+
 </div>
