@@ -24,12 +24,13 @@ class PlayersController < ApplicationController
   def destroy
     @player = Player.find(params[:id])
     @player.destroy
-    redirect_to new_player_path
+    redirect_to players_path
   end
 
   def index
     @user = current_user
     @players = @user.players
+    @tasks = @user.tasks
     @player = Player.new()
     @mixandmatch = Mixandmatch.new()
   end

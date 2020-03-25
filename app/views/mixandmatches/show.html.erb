@@ -1,32 +1,18 @@
 <div class="container">
 
-<h1>YESSSSSSS</h1>
-
-<%= current_user.id %>
-<ul>
-<% @tasks.each do |task| %>
-<li><%= task.name %></li>
-<% end %>
-</ul>
-<ul>
-<% @players.each do |player| %>
-<li><%= player.pseudo %></li>
-<% end %>
-</ul>
-
-<p>Attributions :</p>
-
+<h1>Mix and match</h1>
   <ul>
     <% @mixandmatch.attributions.each do |attribution| %>
     <li><%= attribution.player.pseudo %> - <%= attribution.task.name  %> </li>
     <% end %>
   </ul>
+</div>
 
-  <%#= @mixandmatch.attributions %>
 
-<% @players.each do |player| %>
-<%= player.pseudo %>
-<% end %>
+<div>
+  <%#= p @tasks %>
+  <%#= p @players %>
+  <%#= p @players[0].id %>
 
 </div>
 
