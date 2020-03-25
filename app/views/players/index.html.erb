@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Players list</h1>
+  <ul>
+  <% @players.each do |player| %>
+  <li><%= player.pseudo %> - <%= link_to "delete", player_path(player), method: :delete %> <%#= link_to "edit skills", new_skill_path(player)%></li>
+  <% end %>
+  </ul>
+</div>
+
+<div class="container">
+  <%= render partial: 'new' %>
+</div>

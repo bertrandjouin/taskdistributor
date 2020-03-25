@@ -9,17 +9,13 @@
     </div>
   <% end %>
 </div>
-
-<div class="container">
-  <%= render partial: 'index' %>
-  <%= render '/tasks/index' %>
-</div>
-
-<div class="container">
-  <%= simple_form_for @mixandmatch do |f| %>
-  <%= f.submit "mixandmatch", class: "btn-home", class: "btn btn-primary" %>
-  <% end %>
-</div>
-
-
+<% if @players.count > 0 %>
+  <div class="container">
+    <%= simple_form_for @mixandmatch do |f| %>
+    <%= f.submit "mixandmatch", class: "btn-home", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% else %>
+  <p>Add players</p>
+<% end %>
 </div>
