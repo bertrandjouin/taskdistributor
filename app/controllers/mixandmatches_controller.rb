@@ -24,16 +24,18 @@ def show
   @user = current_user
   @tasks = @user.tasks
   @players = @user.players
-  randomtaskattribution()
-  @attribution.save
+  @tasks.shuffle.each do |task|
+    randomtaskattribution(task)
+    @attribution.save
+  end
+
 end
 
-def randomtaskattribution
-  @tasks.shuffle.each do |task|
+def randomtaskattribution(task)
+
   @attribution = Attribution.new()
   @attribution.task_id = task.id
   @attribution.mixandmatch_id = @mixandmatch.id
-  end
     @players.each do |player|
     @attribution.player_id = player.id
   end
