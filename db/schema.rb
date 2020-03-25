@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_111611) do
+ActiveRecord::Schema.define(version: 2020_03_24_112210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,15 @@ ActiveRecord::Schema.define(version: 2020_03_23_111611) do
     t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "mixandmatch_id"
+    t.index ["mixandmatch_id"], name: "index_attributions_on_mixandmatch_id"
     t.index ["player_id"], name: "index_attributions_on_player_id"
     t.index ["task_id"], name: "index_attributions_on_task_id"
+  end
+
+  create_table "mixandmatches", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -76,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_111611) do
     t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attributions", "mixandmatches"
   add_foreign_key "attributions", "players"
   add_foreign_key "attributions", "tasks"
   add_foreign_key "players", "users"

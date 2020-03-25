@@ -1,18 +1,13 @@
 class AttributionsController < ApplicationController
 
 def new
-  @user = current_user
-  @tasks = @user.tasks
-  @players = @user.players
+  @attribution = Attribution.new()
 end
 
 def create
-playersselect(@players)
-end
-
-
-def playersselect(players)
-  @player = players.sample
+  @attribution = Attribution.new(attribution_params)
+  @attribution.save
 end
 
 end
+
