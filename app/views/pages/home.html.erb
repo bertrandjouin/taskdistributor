@@ -1,16 +1,58 @@
+<%= render '/shared/navbar' %>
+<div>
+  <div class="banner">
+    <div class="container">
+      <!-- <h1>Bienvenue sur MixAndMatch</h1> -->
+        <div class="disclaimer">
+          <h4>Avec MixAndMatch, répartissez de façon ludique
+          les tâches entre les membres de votre équipe
+          ou de votre famille.</h4>
+        </div>
+    </div>
+      <div class="container cta">
+        <% if user_signed_in? %>
+          <%= link_to "Démarrer", tasks_path, class: "btn btn-success" %>
+        <% else %>
+          <%= link_to "Inscrivez-vous", new_user_registration_path, class: "btn btn-success" %>
+        <% end %>
+      </div>
+  </div>
+
+
 
 
 <div class="container">
-  <h1>Welcome to task distributor</h1>
-  <div>
-    <div>
-      <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      <%= link_to "create tasks", tasks_path, class: "btn btn-primary" %>
-      <% else %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      <%= link_to "Signup ", new_user_registration_path, class: "nav-link" %>
-      <% end %>
+  <div class="explanations">
+      <h4>Comment ça marche ?</h4>
+      <h5>En manque d'inspiration pour attribuer les tâches au sein de votre équipe ou de votre famille ?</h5>
+      <h5>Suivez nos trois étapes très simples : </h5>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="cardscontainer d-inline-flex justify-content-around">
+    <div class="card">
+      <div>
+        <i class="fas fa-tasks"></i>
+        <h2>Listez les tâches</h2>
+        <p>Définissez les tâches à accomplir par l'équipe</p>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <i class="fas fa-user-friends"></i>
+        <h2>Créez votre équipe</h2>
+        <p>Saisissez les pseudo des membres de votre équipe</p>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <i class="fas fa-hat-wizard"></i>
+        <h2>Laissez nous faire !</h2>
+        <p>Notre algorithme vous surprendra par sa puissance</p>
+      </div>
     </div>
   </div>
 </div>
+<%= render '/shared/footer' %>
