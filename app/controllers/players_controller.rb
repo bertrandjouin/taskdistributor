@@ -14,6 +14,7 @@ class PlayersController < ApplicationController
     @user = current_user
     @players = @user.players
     @mixandmatch = Mixandmatch.new()
+    @tasks = @user.tasks
     if @player.save
       redirect_to players_path
     else

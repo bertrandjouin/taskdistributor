@@ -5,6 +5,8 @@
   padding: 2em;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: fit-content;
+  // position: fixed;
 }
 
 .formflex {
@@ -16,4 +18,20 @@
 .formflex i {
   font-size: 16em;
   color:#007BFF
+}
+
+.formanditems {
+display: flex;
+}
+
+.centercontentformanditems {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.rightcontentformanditems {
+  text-align: right;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }

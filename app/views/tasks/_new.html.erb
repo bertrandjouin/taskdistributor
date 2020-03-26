@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>New task</h1>
+  <h4>New task</h4>
   <%= simple_form_for(@task) do |f| %>
     <div class="form-inputs">
       <%= f.input :name, required: true %>
@@ -12,7 +12,5 @@
 </div>
 <div>
 </div>
-<div class="container">
-  <%= link_to "start adding players", players_path, class: "btn btn-primary" %>
-</div>
+
 

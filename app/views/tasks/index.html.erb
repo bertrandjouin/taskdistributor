@@ -1,16 +1,31 @@
 <%= render '/shared/navbar' %>
 <div class="container">
-  <%# if @tasks.count == 0 %>
-    <!-- <h1>Task list is empty</h1> -->
-  <%# else %>
-    <h1>Tasks list</h1>
+    <h2 class="centercontentformanditems">Ma liste de tâches</h2>
+  <div class="formanditems">
+
+    <div class="left-form">
+      <%= render 'new' %>
+    </div>
+
+    <div class="itemslist">
       <ul>
         <% @tasks.each do |task| %>
-        <li><%= task.name.capitalize %> <%#= task.repeatable %> <%= link_to "delete", task_path(task), method: :delete %></li>
+        <div class="taskcard">
+          <div class="taskcard-color"></div>
+            <div class="taskcard-content">
+              <strong><%= task.name.capitalize %></strong>
+              <%= link_to "delete", task_path(task), method: :delete %>
+            </div>
+          </div>
         <% end %>
       </ul>
-    <%# end %>
+    </div>
+  </div>
 
-  <%= render 'new' %>
+
+<div class="container rightcontentformanditems">
+  <%= link_to "start adding players", players_path, class: "btn btn-success" %>
+</div>
+
 
 </div>

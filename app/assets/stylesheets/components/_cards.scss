@@ -20,3 +20,30 @@
     margin: 0.5em 0em;
   }
 }
+
+.itemslist {
+  margin-left:3em;
+  width: 100%;
+}
+
+.taskcard-color {
+  width:1em;
+  background-color: #4A144B;
+}
+
+.taskcard {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: left;
+  border-radius: 3px;
+  margin-bottom: 2em;
+  display: flex;
+}
+
+.taskcard-content {
+  display: flex;
+  padding:1em;
+  width: 100%;
+  justify-content: space-between;
+}
