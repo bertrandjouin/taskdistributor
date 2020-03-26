@@ -10,3 +10,14 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.btn-white {
+  color: #007BFF;
+  margin-left: 1em;
+  border-color: #D1E5FF;
+  border: 1px solid white;
+  border-radius: 4px;
+  a {
+    color: white;
+  }
+}

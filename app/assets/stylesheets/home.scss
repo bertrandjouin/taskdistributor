@@ -1,5 +1,10 @@
-h4, h2 {
+h1 {
   font-family: 'Baloo Thambi 2', 'cursive';
+  font-size: 4em;
+}
+
+body {
+  background-color: #FFFFFF;
 }
 
 h5, p {
@@ -40,30 +45,4 @@ h5, p {
   font-size: 3em;
   margin-top: 1em;
   }
-}
-
-.cardscontainer {
-  margin: 3em 0em;
-  width: 100%;
-
-}
-
-.card {
-  // overflow: hidden;
-  background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  text-align: center;
-  width: 30%;
-  padding:1em;
-  h2 {
-    font-size: 2em;
-  }
-  i {
-    font-size: 5em;
-    margin: 0.5em 0em;
-  }
-}
-
-body {
-  background-color: #F8F8F8;
 }
