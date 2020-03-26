@@ -7,3 +7,7 @@
   padding: 0px 5em;
   color: rgba(0,0,0,0.3);
 }
+
+.content-wrapper {
+  min-height: calc(100vh - 54px - 68px);
+}
