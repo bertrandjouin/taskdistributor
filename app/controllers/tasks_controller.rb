@@ -26,6 +26,8 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    @attributions = @task.attributions
+    @attributions.destroy_all
     @task.destroy
     redirect_to tasks_path
   end
