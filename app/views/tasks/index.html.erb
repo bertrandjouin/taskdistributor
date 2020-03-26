@@ -14,7 +14,7 @@
           <div class="taskcard-color"></div>
             <div class="taskcard-content">
               <strong><%= task.name.capitalize %></strong>
-              <%= link_to "delete", task_path(task), method: :delete %>
+              <%= link_to '<i class="fas fa-trash"></i>'.html_safe, task_path(task), method: :delete %>
             </div>
           </div>
         <% end %>
@@ -24,7 +24,7 @@
 
 
 <div class="container rightcontentformanditems">
-  <%= link_to "start adding players", players_path, class: "btn btn-success" %>
+  <%= link_to "Créez votre équipe", players_path, class: "btn btn-success" %>
 </div>
 
 
