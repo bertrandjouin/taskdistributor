@@ -1,21 +1,10 @@
 <div class="container">
-  <h1>New player</h1>
+  <h4>Créez votre équipe :</h4>
   <%= simple_form_for(@player) do |f| %>
     <div class="inline-form">
-      <%= f.input :pseudo %>
+      <%= f.input :pseudo, :label => "Nom", :placeholder => "John Doe" %>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-primary" %>
+    <div class="form-actions rightcontentformanditems">
+      <%= f.button :submit, "Ajouter", class: "btn btn-primary" %>
     </div>
   <% end %>
-</div>
-<% if @players.count > 0 %>
-  <div class="container">
-    <%= simple_form_for @mixandmatch do |f| %>
-    <%= f.submit "mixandmatch", class: "btn-home", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-<% else %>
-  <p>Add players</p>
-<% end %>
-</div>

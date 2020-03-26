@@ -1,31 +1,54 @@
 <%= render '/shared/navbar' %>
 <div class="container">
-    <h2 class="centercontentformanditems">Ma liste de tâches</h2>
   <div class="formanditems">
+    <div class="chemindefer">
+      <div class="cardscontainer d-inline-flex justify-content-around">
+        <div class="smallcard active">
+          <div>
+            <i class="fas fa-tasks"></i>
+          </div>
+        </div>
+        <div class="smallcard inactive">
+          <div>
+            <i class="fas fa-user-friends"></i>
+            <!-- <h2>Créez votre équipe</h2> -->
+          </div>
+        </div>
+        <div class="smallcard inactive">
+          <div>
+            <i class="fas fa-hat-wizard"></i>
+            <!-- <h2>Laissez nous faire !</h2> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="buttonright">
+      <% if @tasks.count > 0 %>
+      <%= link_to "Créez votre équipe", players_path, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="formanditems">
     <div class="left-form">
       <%= render 'new' %>
     </div>
 
     <div class="itemslist">
-      <ul>
-        <% @tasks.each do |task| %>
-        <div class="taskcard">
-          <div class="taskcard-color"></div>
-            <div class="taskcard-content">
-              <strong><%= task.name.capitalize %></strong>
-              <%= link_to '<i class="fas fa-trash"></i>'.html_safe, task_path(task), method: :delete %>
+      <h2>Ma liste de tâches</h2>
+      <div class="rightcontentformanditems">
+        <ul>
+          <% @tasks.each do |task| %>
+          <div class="taskcard">
+            <div class="taskcard-color"></div>
+              <div class="taskcard-content">
+                <strong><%= task.name.capitalize %></strong>
+                <%= link_to '<i class="fas fa-trash"></i>'.html_safe, task_path(task), method: :delete %>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </ul>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-
-
-<div class="container centercontentformanditems">
-  <%= link_to "Créez votre équipe", players_path, class: "btn btn-success" %>
-</div>
-
-
 </div>

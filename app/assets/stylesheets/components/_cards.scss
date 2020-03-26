@@ -1,7 +1,6 @@
 .cardscontainer {
   margin: 3em 0em;
   width: 100%;
-
 }
 
 .card {
@@ -20,15 +19,62 @@
     margin: 0.5em 0em;
   }
 }
+.chemindefer {
+  // margin: 0em auto;
+  width: 30%;
+}
+
+.smallcard {
+  // overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  justify-content:center;
+  width: 5em;
+  height: 5em;
+  padding:0.5em;
+  border-radius: 50%;
+  h2 {
+    font-size: 1em;
+  }
+  i {
+    font-size: 2em;
+    margin: 0.5em 0em;
+  }
+}
+
+.active {
+  background-color: #007BFF;
+  color: white;
+}
+
+.inactive {
+  background-color: #FFFFFF;
+}
 
 .itemslist {
+  padding: 2em;
   margin-left:3em;
-  width: 100%;
+  width: 60%;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  min-height: 1em;
+  border-radius: 2px;
+}
+
+.players {
+  min-height: 1em;
+  margin-bottom: 3em;
 }
 
 .taskcard-color {
   width:1em;
   background-color: #4A144B;
+}
+
+.taskcard-color-player {
+  width:1em;
+  background-color: orange;
 }
 
 .taskcard {

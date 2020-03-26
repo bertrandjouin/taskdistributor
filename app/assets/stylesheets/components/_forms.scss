@@ -26,12 +26,29 @@ display: flex;
 
 .centercontentformanditems {
   text-align: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  // margin-top: 2em;
+  // margin-bottom: 2em;
+
 }
 
 .rightcontentformanditems {
   text-align: right;
+  // margin-top: 2em;
+  // margin-bottom: 2em;
+  ul {
+    padding-left:0em;
+  }
+}
+
+.buttonright {
+  text-align: right;
   margin-top: 2em;
   margin-bottom: 2em;
+  padding: 2em;
+  margin-left:3em;
+  width: 60%;
+}
+
+.blank {
+  box-shadow: 0 0 15px transparent;
 }

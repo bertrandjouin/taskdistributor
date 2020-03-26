@@ -1,23 +1,81 @@
 <%= render '/shared/navbar' %>
 <div class="container">
-  <h4>Tasks list</h4>
-  <ul>
-  <% @tasks.each do |task| %>
-  <li><%= task.name %></li>
-  <% end %>
-  </ul>
+  <div class="formanditems">
+    <div class="chemindefer">
+      <div class="cardscontainer d-inline-flex justify-content-around">
+        <div class="smallcard active">
+          <div>
+            <i class="fas fa-tasks"></i>
+          </div>
+        </div>
+        <div class="smallcard active">
+          <div>
+            <i class="fas fa-user-friends"></i>
+            <!-- <h2>Créez votre équipe</h2> -->
+          </div>
+        </div>
+        <div class="smallcard inactive">
+          <div>
+            <i class="fas fa-hat-wizard"></i>
+            <!-- <h2>Laissez nous faire !</h2> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="buttonright">
+    <% if @players.count > 0 %>
+    <%= simple_form_for @mixandmatch do |f| %>
+    <%= f.submit "mixandmatch", class: "btn-home", class: "btn btn-success" %>
+    <% end %>
+    <% else %>
+    <% end %>
+  </div>
 </div>
 
-<div class="container">
-  <h1>Players list</h1>
-  <ul>
-  <% @players.each do |player| %>
-  <li><%= player.pseudo %> - <%= link_to "delete", player_path(player), method: :delete %> <%#= link_to "edit skills", new_skill_path(player)%></li>
-  <% end %>
-  </ul>
+<div class="formanditems">
+  <div class="left-form">
+    <%= render 'new' %>
+  </div>
+</div>
+  <div class="itemslist players">
+    <h2>Mon équipe</h2>
+    <div class="rightcontentformanditems players">
+      <ul>
+        <% @players.each do |player| %>
+        <div class="taskcard">
+          <div class="taskcard-color-player"></div>
+            <div class="taskcard-content">
+              <strong><%= player.pseudo.capitalize %></strong>
+              <%= link_to '<i class="fas fa-trash"></i>'.html_safe, player_path(player), method: :delete %>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-  <%= render partial: 'new' %>
+<div class="formanditems">
+  <div class="left-form blank">
+  </div>
+
+  <div class="itemslist">
+    <h2>Ma liste de tâches</h2>
+    <div class="rightcontentformanditems">
+      <ul>
+        <% @tasks.each do |task| %>
+        <div class="taskcard">
+          <div class="taskcard-color"></div>
+            <div class="taskcard-content">
+              <strong><%= task.name.capitalize %></strong>
+              <%= link_to '<i class="fas fa-trash"></i>'.html_safe, task_path(task), method: :delete %>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+</div>
+
 
