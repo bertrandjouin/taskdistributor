@@ -31,26 +31,50 @@
 
 <div class="container">
   <div class="cardscontainer d-inline-flex justify-content-around">
+
+
+<% if user_signed_in? %>
+
+
     <div class="card">
       <a href="/tasks">
         <div>
           <i class="fas fa-tasks"></i>
-          <h2>Listez les tâches</h2>
+          <h2>1 - Listez les tâches</h2>
           <p>Définissez les tâches à accomplir par l'équipe</p>
         </div>
       </a>
     </div>
+
+<% else %>
+
+    <div class="card">
+      <a href="/users/sign_in">
+        <div>
+          <i class="fas fa-tasks"></i>
+          <h2>1 - Listez les tâches</h2>
+          <p>Définissez les tâches à accomplir par l'équipe</p>
+        </div>
+      </a>
+    </div>
+
+<% end %>
+
+
+
+
+
     <div class="card">
       <div>
         <i class="fas fa-user-friends"></i>
-        <h2>Créez votre équipe</h2>
+        <h2>2 - Créez votre équipe</h2>
         <p>Saisissez les pseudo des membres de votre équipe</p>
       </div>
     </div>
     <div class="card">
       <div>
         <i class="fas fa-hat-wizard"></i>
-        <h2>Laissez nous faire !</h2>
+        <h2>3 - Laissez nous faire !</h2>
         <p>Notre algorithme vous surprendra par sa puissance</p>
       </div>
     </div>
