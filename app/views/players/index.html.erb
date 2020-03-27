@@ -9,18 +9,30 @@
             </div>
           </div>
         </a>
-        <div class="smallcard active">
-          <div>
-            <i class="fas fa-user-friends"></i>
-            <!-- <h2>Créez votre équipe</h2> -->
+        <% if @tasks.count > 0 %>
+        <a href="/players">
+        <% end %>
+          <div class="smallcard active">
+            <div>
+              <i class="fas fa-user-friends"></i>
+              <!-- <h2>Créez votre équipe</h2> -->
+            </div>
           </div>
-        </div>
-        <div class="smallcard inactive">
-          <div>
-            <i class="fas fa-hat-wizard"></i>
-            <!-- <h2>Laissez nous faire !</h2> -->
+        <% if @tasks.count > 0 %>
+        </a>
+        <% end %>
+        <%# if @players.count > 0 %>
+        <!-- <a href="/mixandmatch"> -->
+        <%# end %>
+          <div class="smallcard inactive">
+            <div>
+              <i class="fas fa-hat-wizard"></i>
+              <!-- <h2>Laissez nous faire !</h2> -->
+            </div>
           </div>
-        </div>
+        <%# if @players.count > 0 %>
+        <!-- </a> -->
+        <%# end %>
       </div>
     </div>
   <div class="buttonright">
