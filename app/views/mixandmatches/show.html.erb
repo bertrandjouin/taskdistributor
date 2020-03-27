@@ -1,10 +1,67 @@
-
 <div class="container">
-<h1>Mix and match</h1>
-  <ul>
-    <% @mixandmatch.attributions.each do |attribution| %>
-    <li><%= attribution.player.pseudo %> - <%= attribution.task.name  %> </li>
-    <% end %>
-  </ul>
+
+  <div class="formanditems">
+    <div class="chemindefer">
+      <div class="cardscontainer d-inline-flex justify-content-around">
+        <a href="/tasks">
+          <div class="smallcard active">
+            <div>
+              <i class="fas fa-tasks"></i>
+            </div>
+          </div>
+        </a>
+        <a href="/players">
+          <div class="smallcard active">
+            <div>
+              <i class="fas fa-user-friends"></i>
+              <!-- <h2>Créez votre équipe</h2> -->
+            </div>
+          </div>
+        </a>
+        <div class="smallcard active">
+          <div>
+            <i class="fas fa-hat-wizard"></i>
+            <!-- <h2>Laissez nous faire !</h2> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonright">
+      <%= link_to 'Recommencer', edit_mixandmatch_path, class: "btn btn-success" %>
+    </div>
+  </div>
+
+  <div class="centercontentformanditems">
+    <h2>Mix and match</h2>
+    <p>Voici la répartition des tâches entre les membres de votre équipe :</p>
+  </div>
+
+<div class="finalcardscontainer">
+  <% @mixandmatch.attributions.each do |attribution| %>
+    <div class="cardgrid">
+      <div class="taskcard">
+        <div class="taskcard-color-player"></div>
+          <div class="taskcard-content">
+            <strong><%= attribution.player.pseudo.capitalize %></strong>
+          </div>
+        </div>
+        <div class="arrow">
+          <div class="very smallcard active">
+            <div>
+              <i class="fas fa-arrows-alt-h"></i>
+            </div>
+          </div>
+        </div>
+        <div class="taskcard">
+            <div class="taskcard-color"></div>
+              <div class="taskcard-content">
+                <strong><%= attribution.task.name.capitalize %></strong>
+              </div>
+            </div>
+          </div>
+  <% end %>
 </div>
+
+</div>
+
 

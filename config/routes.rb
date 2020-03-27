@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :players, only: [:new, :create, :index, :destroy]
     resources :skills, only: [:new, :create, :index, :destroy]
     resources :attributions, only: [:new, :create, :index, :destroy]
-    resources :mixandmatches, only: [:new, :create, :index, :show, :destroy]
+    resources :mixandmatches, only: [:new, :create, :index, :show, :destroy, :edit, :update]
   get 'test', to: 'pages#test'
 end

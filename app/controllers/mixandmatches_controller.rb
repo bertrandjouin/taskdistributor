@@ -35,4 +35,19 @@ class MixandmatchesController < ApplicationController
       @attribution.save
     end
   end
+
+def edit
+  @mixandmatch = Mixandmatch.find(params[:id])
+  @mixandmatch.attributions.destroy_all
+  @attribution = Attribution.new()
+  @user = current_user
+  @tasks = @user.tasks
+  @players = @user.players
+  redirect_to mixandmatch_path(@mixandmatch)
+end
+
+def update
+end
+
+
 end
