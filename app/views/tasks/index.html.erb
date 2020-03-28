@@ -21,7 +21,7 @@
         </a>
         <% end %>
 
-        <% if @players.count > 0 %>
+        <% if @players.count > 0 && @tasks.count > 0 %>
           <%= simple_form_for @mixandmatch do |f| %>
           <button type="submit" class="fabutton">
             <div class="smallcard inactive">
