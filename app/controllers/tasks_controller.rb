@@ -21,7 +21,9 @@ class TasksController < ApplicationController
   def index
     @user = current_user
     @tasks = @user.tasks
+    @players = @user.players
     @task = Task.new
+    @mixandmatch = Mixandmatch.new()
   end
 
   def destroy
