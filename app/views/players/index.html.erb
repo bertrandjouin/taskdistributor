@@ -21,18 +21,26 @@
         <% if @tasks.count > 0 %>
         </a>
         <% end %>
-        <%# if @players.count > 0 %>
-        <!-- <a href="/mixandmatch"> -->
-        <%# end %>
+
+        <% if @players.count > 0 %>
+          <%= simple_form_for @mixandmatch do |f| %>
+          <button type="submit" class="fabutton">
+            <div class="smallcard inactive">
+              <div>
+                <i class="fas fa-hat-wizard blue"></i>
+                <!-- <h2>Laissez nous faire !</h2> -->
+              </div>
+            </div>
+          </button>
+          <% end %>
+        <% else %>
           <div class="smallcard inactive">
             <div>
               <i class="fas fa-hat-wizard"></i>
               <!-- <h2>Laissez nous faire !</h2> -->
             </div>
           </div>
-        <%# if @players.count > 0 %>
-        <!-- </a> -->
-        <%# end %>
+        <% end %>
       </div>
     </div>
   <div class="buttonright">

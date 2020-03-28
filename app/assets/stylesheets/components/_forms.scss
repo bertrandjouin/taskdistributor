@@ -52,3 +52,15 @@ display: flex;
 .blank {
   box-shadow: 0 0 15px transparent;
 }
+
+.fabutton {
+  background: none;
+  padding: 0px;
+  border: none;
+  outline: inherit;
+  &:focus {outline:0;}
+}
+
+.blue {
+  color: #007BFF;
+}
