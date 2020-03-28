@@ -10,6 +10,8 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
-
+def default_url_options
+  { host: ENV["DOMAIN"] || "www.mixandmatch.live" }
+end
 
 end
