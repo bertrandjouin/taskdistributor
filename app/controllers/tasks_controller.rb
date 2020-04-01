@@ -11,6 +11,7 @@ class TasksController < ApplicationController
     @task.user = current_user
     @user = current_user
     @tasks = @user.tasks
+    @players = @user.players
     if @task.save
       redirect_to tasks_path
     else
